@@ -11,7 +11,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ItemViewHolder>{
 
     private int mItemNumber;
 
-
     public MyAdapter(int itemNumber){
         mItemNumber = itemNumber;
     }

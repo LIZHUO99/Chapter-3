@@ -31,6 +31,7 @@ public class PlaceholderFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         itemList.setLayoutManager(layoutManager);
 
+
         mAdapter = new MyAdapter(100);
 
         itemList.setAdapter(mAdapter);
@@ -53,8 +54,9 @@ public class PlaceholderFragment extends Fragment {
                 ObjectAnimator animator1 = ObjectAnimator.ofFloat(itemList, "alpha", 0f, 1f);
                 animator1.setDuration(733);
 
-                animator.start();
-                animator1.start();
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playSequentially(animator, animator1);
+                animatorSet.start();
             }
         }, 5000);
     }
